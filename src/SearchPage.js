@@ -44,7 +44,7 @@ class SearchPage extends React.Component {
           {
           isLoading
             ? <p className={styles.spin}></p>
-            : pokeState.map(poke => <PokeItem key={poke} pokemon={poke} />)
+            : pokeState.map(poke => <PokeItem key={poke.id} pokemon={poke} />)
           }
       </div>
       
