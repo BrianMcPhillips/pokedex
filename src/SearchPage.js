@@ -32,22 +32,26 @@ class SearchPage extends React.Component {
   render() {
     const { isLoading, pokeState } = this.state;
     return (
-      <div>
-        <input onChange={(e) => this.setState({ search: e.target.value })} />
-        <select onChange={(e) => { this.setState({ searchBy: e.target.value })} }>
-          <option value='pokemon'>name</option>
-          <option value='type'>type</option>
-          <option value='attack'>attack</option>
-          <option value='defense'>defense</option>
-        </select>
-        <button onClick={this.handleClick}>Get Pokemon</button>
-          {
-          isLoading
-            ? <p className={styles.spin}></p>
-            : pokeState.map(poke => <PokeItem key={poke.id} pokemon={poke} />)
-          }
-      </div>
-      
+      <main className="main">
+        <div>
+          <input onChange={(e) => this.setState({ search: e.target.value })} />
+          <select onChange={(e) => { this.setState({ searchBy: e.target.value })} }>
+            <option value='pokemon'>name</option>
+            <option value='type'>type</option>
+            <option value='attack'>attack</option>
+            <option value='defense'>defense</option>
+          </select>
+          <button onClick={this.handleClick}>Get Pokemon</button>
+            
+        </div>
+        <div className='poke-display'>
+        {
+            isLoading
+              ? <p className={styles.spin}></p>
+              : pokeState.map(poke => <PokeItem key={poke.id} pokemon={poke} />)
+            }
+        </div>
+        </main>
     );
   }
 }

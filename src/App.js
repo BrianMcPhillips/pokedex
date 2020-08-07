@@ -12,10 +12,11 @@ import styles from './App.css';
 export default class App extends Component {
     render() {
         return (
-          <>
+          <main>
           <div className={styles.Box}>
                 <Router>
-                    <header>
+                    <header className="App-header">
+                        <h1><img src='https://fontmeme.com/permalink/200807/ad2a23007587e6787bc4efaa13bcf7dc.png' alt='title'/></h1>
                       <li>
                         <Link to="/detail">Detail</Link>
                       </li>
@@ -37,7 +38,7 @@ export default class App extends Component {
                     </Switch>
                 </Router>
             </div>
-            </>
+            </main>
         )
     }
 }

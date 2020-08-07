@@ -10,9 +10,9 @@ class PokeItem extends React.Component {
           url_image,
         }
       } = this.props;
-    return <Link key={pokemon} to ={`/detail/${pokemon}`}>
-      <p className={styles.Box}>Hi, I'm {pokemon}</p>
-      <img src={url_image} alt={pokemon} />
+    return <Link to ={`/detail/${pokemon}`}>
+      <p className={styles.Box}>{pokemon}</p>
+      <img className="poke-image" src={url_image} alt={pokemon} />
     </Link>
     }
   }
