@@ -1,17 +1,41 @@
-import React from 'react';
-import PokeItem from './PokeItem'
+import React, { Component } from 'react';
+import PokeItem from './PokeItem.js';
 
-class PokeList extends React.Component {
+export default class PokeList extends Component {
     render() {
+      const {
+          pokeState,
+          handleNextClick,
+          handlePrevClick,
+          currentPage,
+          totalPages
+      } = this.props
+      
       return (
          <div>
-            <ul>
-            {this.props.pokemons.map((pokemon) => <PokeItem pokemon={pokemon} />)
+            {
+              pokeState.length > 0 && <div>
+                {
+                  Number(currentPage) !== 1
+                  && <button onClick={handlePrevClick}>Prev</button>
+                }
+                {
+                  Number(currentPage) !== Number(totalPages) && 
+                  <button onClick={handleNextClick}>Next</button>
+                }
+                {currentPage} of {totalPages}
+
+              </div>
             }
-          </ul>
-      </div>
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap'
+              }}>
+                {pokeState.map(pokemon => <PokeItem pokemon={pokemon} />)}
+              </div>
+          </div>
       )
     }
   }
 
-  export default PokeList;
+  
