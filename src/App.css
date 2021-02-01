@@ -14,19 +14,53 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  
+  text-align: center;
+  background-repeat: no-repeat;
+  background-color: hsla(199, 30%, 60%, 1);
+  min-height: 150px;
+  display: grid;
+  ;
+  
   align-items: center;
-  justify-content: center;
+  justify-content: left, space-around;
   font-size: calc(10px + 2vmin);
-  color: white;
+  
+  list-style: none;
+
 }
 
 .App-link {
   color: #61dafb;
 }
+.main {
+ 
+  background-color: black;
+
+}
+
+.poke-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.poke-image {
+  width: 150px;
+  height: 150px;
+ 
+}
+html {
+  background-color: black;
+}
+
+p {
+  color:white;
+  text-decoration: none;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

@@ -6,7 +6,7 @@ class PokeList extends React.Component {
       return (
          <div>
             <ul>
-            {this.props.pokemons.map((pokemon) => <PokeItem key={pokemon} pokemon={pokemon} />)
+            {this.props.pokemons.map((pokemon) => <PokeItem pokemon={pokemon} />)
             }
           </ul>
       </div>
